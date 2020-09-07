@@ -1,0 +1,9 @@
+package BookApp.client;
+
+import javax.ws.rs.ext.MessageBodyReader;
+
+import BookApp.core.Book;
+
+public class BookBodyReader implements MessageBodyReader<Book>{
+
+}

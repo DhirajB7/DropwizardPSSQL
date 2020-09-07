@@ -1,0 +1,5 @@
+package BookApp.client;
+
+public class BookBodyReader {
+
+}

@@ -1,0 +1,89 @@
+package BookApp.resources;
+
+import java.util.List;
+
+import javax.ws.rs.GET;
+import javax.ws.rs.POST;
+import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
+
+import org.jdbi.v3.core.Jdbi;
+import com.codahale.metrics.annotation.Timed;
+import BookApp.db.BookDAO;
+
+@Path("/book")
+@Produces(MediaType.APPLICATION_JSON)
+public class BookResource {
+
+	private Jdbi jdbi;
+	private BookDAO bdao;
+
+	public BookResource(Jdbi jdbi) {
+		this.jdbi = jdbi;
+		this.bdao = this.jdbi.onDemand(BookDAO.class);
+	}
+
+	@Path("/name/{id}")
+	@GET
+	@Timed
+	public String getBookName(@PathParam("id") int id) {
+
+		String name = bdao.findNameById(id);
+
+		if (name == null) {
+			return "NO DATA FOUND";
+		} else {
+			return name;
+		}
+
+	}
+
+	@Path("/name/all")
+	@GET
+	@Timed
+	public List<String> getAllBookName() {
+
+		return bdao.findAllNames();
+
+	}
+
+	@Path("/author/{id}")
+	@GET
+	@Timed
+	public String getAuthorName(@PathParam("id") int id) {
+
+		String name = bdao.findAuthorNameById(id);
+
+		if (name == null) {
+			return "NO DATA FOUND";
+		} else {
+			return name;
+		}
+
+	}
+
+	@Path("/author/all")
+	@GET
+	@Timed
+	public List<String> getAllAuthorName() {
+
+		return bdao.findAllAuthorNames();
+
+	}
+
+	@Path("/add/{id}/{name}/{author}/{price}")
+	@POST
+	@Timed
+	public String addABook(@PathParam("id") int id,@PathParam("name") String name,@PathParam("author") String author,@PathParam("price") double price) {
+
+		
+		if (bdao.addToDB(id, name, author, price)) {
+			return "DATA ADDED";
+		} else {
+			return "DATA NOT ADDED";
+		}
+
+	}
+}

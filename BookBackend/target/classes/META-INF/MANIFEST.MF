@@ -1,0 +1,56 @@
+Manifest-Version: 1.0
+Built-By: Dhiraj
+Build-Jdk: 13.0.2
+Class-Path: dropwizard-core-2.0.12.jar dropwizard-util-2.0.12.jar guava-
+ 28.2-jre.jar failureaccess-1.0.1.jar listenablefuture-9999.0-empty-to-a
+ void-conflict-with-guava.jar checker-qual-3.5.0.jar error_prone_annotat
+ ions-2.4.0.jar j2objc-annotations-1.3.jar dropwizard-jackson-2.0.12.jar
+  caffeine-2.8.5.jar jackson-core-2.10.5.jar jackson-datatype-guava-2.10
+ .5.jar jackson-datatype-jsr310-2.10.5.jar jackson-datatype-jdk8-2.10.5.
+ jar jackson-module-parameter-names-2.10.5.jar jackson-module-afterburne
+ r-2.10.5.jar jackson-datatype-joda-2.10.5.jar dropwizard-validation-2.0
+ .12.jar jakarta.el-3.0.3.jar dropwizard-configuration-2.0.12.jar jackso
+ n-dataformat-yaml-2.10.5.jar snakeyaml-1.26.jar commons-text-1.8.jar dr
+ opwizard-logging-2.0.12.jar metrics-logback-4.1.11.jar commons-lang3-3.
+ 11.jar jul-to-slf4j-1.7.30.jar logback-core-1.2.3.jar logback-throttlin
+ g-appender-1.1.0.jar log4j-over-slf4j-1.7.30.jar jcl-over-slf4j-1.7.30.
+ jar dropwizard-metrics-2.0.12.jar dropwizard-jersey-2.0.12.jar jersey-m
+ etainf-services-2.31.jar jersey-hk2-2.31.jar hk2-locator-2.6.1.jar metr
+ ics-jersey2-4.1.11.jar jackson-jaxrs-json-provider-2.10.5.jar jackson-j
+ axrs-base-2.10.5.jar jackson-module-jaxb-annotations-2.10.5.jar jakarta
+ .annotation-api-1.3.5.jar hk2-api-2.6.1.jar hk2-utils-2.6.1.jar aopalli
+ ance-repackaged-2.6.1.jar jersey-container-servlet-2.31.jar jersey-cont
+ ainer-servlet-core-2.31.jar jetty-io-9.4.30.v20200611.jar dropwizard-se
+ rvlets-2.0.12.jar dropwizard-jetty-2.0.12.jar jetty-servlets-9.4.30.v20
+ 200611.jar jetty-continuation-9.4.30.v20200611.jar jetty-http-9.4.30.v2
+ 0200611.jar dropwizard-lifecycle-2.0.12.jar metrics-core-4.1.11.jar met
+ rics-jetty9-4.1.11.jar metrics-jvm-4.1.11.jar metrics-jmx-4.1.11.jar me
+ trics-servlets-4.1.11.jar metrics-json-4.1.11.jar profiler-1.1.1.jar me
+ trics-healthchecks-4.1.11.jar dropwizard-request-logging-2.0.12.jar log
+ back-access-1.2.3.jar logback-classic-1.2.3.jar jackson-databind-2.10.5
+ .jar jsr305-3.0.2.jar jakarta.servlet-api-4.0.4.jar jakarta.ws.rs-api-2
+ .1.6.jar argparse4j-0.8.1.jar jetty-security-9.4.30.v20200611.jar jetty
+ -server-9.4.30.v20200611.jar jetty-servlet-9.4.30.v20200611.jar jetty-u
+ til-9.4.30.v20200611.jar jetty-setuid-java-1.0.4.jar jakarta.inject-2.6
+ .1.jar jersey-common-2.31.jar osgi-resource-locator-1.0.3.jar jakarta.a
+ ctivation-1.2.2.jar jersey-bean-validation-2.31.jar slf4j-api-1.7.30.ja
+ r dropwizard-db-2.0.12.jar tomcat-jdbc-9.0.37.jar tomcat-juli-9.0.37.ja
+ r dropwizard-jdbi3-2.0.12.jar metrics-annotation-4.1.11.jar joda-time-2
+ .10.6.jar jdbi3-core-3.14.1.jar antlr4-runtime-4.7.2.jar geantyref-1.3.
+ 7.jar jdbi3-sqlobject-3.14.1.jar jdbi3-jodatime2-3.14.1.jar jdbi3-guava
+ -3.14.1.jar metrics-jdbi3-4.1.11.jar jackson-annotations-2.10.5.jar jak
+ arta.validation-api-2.0.2.jar hibernate-validator-6.1.5.Final.jar jboss
+ -logging-3.3.2.Final.jar classmate-1.5.1.jar dropwizard-hibernate-2.0.1
+ 2.jar jackson-datatype-hibernate5-2.10.5.jar javax.transaction-api-1.3.
+ jar javax.persistence-api-2.2.jar jersey-client-2.31.jar jersey-server-
+ 2.31.jar jersey-media-jaxb-2.31.jar javassist-3.27.0-GA.jar usertype.co
+ re-7.0.0.CR1.jar usertype.spi-7.0.0.CR1.jar hibernate-core-5.4.18.Final
+ .jar byte-buddy-1.10.13.jar antlr-2.7.7.jar jboss-transaction-api_1.2_s
+ pec-1.1.1.Final.jar jandex-2.1.3.Final.jar dom4j-2.1.3.jar hibernate-co
+ mmons-annotations-5.1.0.Final.jar jaxb-runtime-2.3.1.jar txw2-2.3.1.jar
+  istack-commons-runtime-3.0.7.jar stax-ex-1.8.jar FastInfoset-1.2.15.ja
+ r jakarta.activation-api-1.2.2.jar jakarta.xml.bind-api-2.3.3.jar postg
+ resql-9.1-901-1.jdbc4.jar
+Main-Class: BookApp.BookAppApplication
+Created-By: Maven Integration for Eclipse
+

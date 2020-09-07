@@ -2,6 +2,7 @@ package BookApp.resources;
 
 import java.util.List;
 
+import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
@@ -10,11 +11,16 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 import org.jdbi.v3.core.Jdbi;
+import org.jdbi.v3.sqlobject.customizer.BindMap;
+
 import com.codahale.metrics.annotation.Timed;
+
+import BookApp.core.Book;
 import BookApp.db.BookDAO;
 
 @Path("/book")
 @Produces(MediaType.APPLICATION_JSON)
+@Consumes(MediaType.APPLICATION_JSON)
 public class BookResource {
 
 	private Jdbi jdbi;
@@ -73,13 +79,13 @@ public class BookResource {
 
 	}
 
-	@Path("/add/{id}/{name}/{author}/{price}")
+	@Path("/add")
 	@POST
 	@Timed
-	public String addABook(@PathParam("id") int id,@PathParam("name") String name,@PathParam("author") String author,@PathParam("price") double price) {
+	public String addABook(Book book) {
 
-		
-		if (bdao.addToDB(id, name, author, price)) {
+		System.out.println("22222222222222222222222222222222222222222222222222");
+		if (bdao.addToDB(book.getId(),book.getName(),book.getAuthor(),book.getPrice())) {
 			return "DATA ADDED";
 		} else {
 			return "DATA NOT ADDED";
