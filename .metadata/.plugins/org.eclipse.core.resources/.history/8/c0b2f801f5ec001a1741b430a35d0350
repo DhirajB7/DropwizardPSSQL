@@ -1,0 +1,43 @@
+package BookApp.resources;
+
+import javax.ws.rs.DELETE;
+import javax.ws.rs.GET;
+import javax.ws.rs.POST;
+import javax.ws.rs.PUT;
+import javax.ws.rs.Path;
+
+import com.codahale.metrics.annotation.Timed;
+
+
+@Path("/check")
+public class CheckResource {
+	
+	@Path("/get")
+	@GET
+	@Timed
+	public String checkGet() {
+		return "GET - working";
+	}
+	
+	@Path("/post")
+	@POST
+	@Timed
+	public String checkPost() {
+		return "POST - working";
+	}
+	
+	@Path("/delete")
+	@DELETE
+	@Timed
+	public String checkDelete() {
+		return "DELETE - working";
+	}
+	
+	@Path("/put")
+	@PUT
+	@Timed
+	public String checkPUT() {
+		return "PUT - working";
+	}
+
+}

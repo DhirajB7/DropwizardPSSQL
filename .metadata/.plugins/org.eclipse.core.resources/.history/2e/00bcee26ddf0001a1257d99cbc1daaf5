@@ -1,0 +1,30 @@
+package BookApp.db;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.hibernate.SessionFactory;
+
+import BookApp.core.Book;
+import io.dropwizard.hibernate.AbstractDAO;
+
+public class BookDAO extends AbstractDAO<Book> {
+
+	public BookDAO(SessionFactory sessionFactory) {
+		super(sessionFactory);
+	}
+	
+	public Optional<Book> findById(Long id) {
+        return Optional.ofNullable(get(id));
+    }
+
+    public Book create(Book book) {
+        return persist(book);
+    }
+
+    @SuppressWarnings("unchecked")
+    public List<Book> findAll() {
+        return list((Query<Person>) namedQuery("com.example.helloworld.core.Person.findAll"));
+    }
+
+}

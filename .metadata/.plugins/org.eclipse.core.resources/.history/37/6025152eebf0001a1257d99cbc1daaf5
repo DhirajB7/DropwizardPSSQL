@@ -1,0 +1,12 @@
+package BookApp.core;
+
+import org.jdbi.v3.sqlobject.customizer.Bind;
+import org.jdbi.v3.sqlobject.statement.SqlQuery;
+
+public interface BookDAO {
+	
+	 @SqlQuery("select name from books where id = :id")
+	  String findNameById(@Bind("id") int id);
+
+}
+

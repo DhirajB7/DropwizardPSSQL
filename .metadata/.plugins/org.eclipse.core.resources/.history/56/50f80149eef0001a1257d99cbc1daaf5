@@ -1,0 +1,36 @@
+package BookApp.resources;
+
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
+
+import org.jdbi.v3.core.Jdbi;
+import com.codahale.metrics.annotation.Timed;
+
+import BookApp.core.BookDAO;
+
+
+
+@Path("/book")
+@Produces(MediaType.APPLICATION_JSON)
+public class BookResource {
+	
+	private Jdbi jdbi ;
+	private BookDAO bdao;
+	
+	public BookResource(Jdbi jdbi) {
+		this.jdbi = jdbi;
+		this.bdao = this.jdbi.onDemand(BookDAO.class);
+	}
+	
+	@Path("/{id}")
+	@GET
+	@Timed
+	public String getFirstName(@PathParam("id") int id) {
+		String name = bdao.findNameById(id);
+		
+		return name.length() > 1 ? name : "No Data Found";
+	}
+}

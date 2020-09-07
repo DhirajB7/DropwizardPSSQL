@@ -1,0 +1,17 @@
+package BookApp.resources;
+
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+
+import com.codahale.metrics.annotation.Timed;
+
+@Path("/book")
+public class BookResource {
+	
+	@Path("/all")
+	@GET
+	@Timed
+	public String getAllBook() {
+		return "WORKING BOOK";
+	}
+}

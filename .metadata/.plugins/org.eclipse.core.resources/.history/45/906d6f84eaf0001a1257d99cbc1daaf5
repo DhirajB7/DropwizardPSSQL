@@ -1,0 +1,28 @@
+package BookApp.resources;
+
+import java.util.List;
+
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+
+import org.jdbi.v3.core.Jdbi;
+
+import com.codahale.metrics.annotation.Timed;
+
+@Path("/book")
+public class BookResource {
+	
+	private Jdbi jdbi ;
+	
+	public BookResource(Jdbi jdbi) {
+		this.jdbi = jdbi;
+	}
+
+
+	@Path("/all")
+	@GET
+	@Timed
+	public List<String> getAllBook() {
+		return jdbi.withHandle(a -> a.createQuery("select name from books").mapTo(String.class).list());
+	}
+}

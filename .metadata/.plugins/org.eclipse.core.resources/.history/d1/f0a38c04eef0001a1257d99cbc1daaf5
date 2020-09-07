@@ -1,0 +1,29 @@
+package BookApp.resources;
+
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import org.jdbi.v3.core.Jdbi;
+import com.codahale.metrics.annotation.Timed;
+
+import BookApp.core.BookDAO;
+
+
+
+@Path("/book")
+public class BookResource {
+	
+	private Jdbi jdbi ;
+	private BookDAO bdao;
+	
+	public BookResource(Jdbi jdbi) {
+		this.jdbi = jdbi;
+		this.bdao = jdbi.onDemand(BookDAO.class);
+	}
+
+	@Path("/all")
+	@GET
+	@Timed
+	public String getFirstName() {
+		return bdao.findNameById();
+	}
+}

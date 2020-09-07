@@ -1,0 +1,26 @@
+package BookApp.db;
+
+import java.util.List;
+
+import org.jdbi.v3.sqlobject.customizer.Bind;
+import org.jdbi.v3.sqlobject.statement.SqlQuery;
+
+public interface BookDAO {
+	
+	 @SqlQuery("select name from books where id = :id")
+	  String findNameById(@Bind("id") int id);
+	 
+	 @SqlQuery("select name from books")
+	 List<String> findAllNames();
+
+	 @SqlQuery("select author from books where id = :id")
+	  String findAuthorNameById(@Bind("id") int id);
+	 
+	 @SqlQuery("select author from books")
+	 List<String> findAllAuthorNames();
+	 
+	 @SqlQuery("select * from books")
+	 List<String> findAllBooks();
+	 
+	 }
+

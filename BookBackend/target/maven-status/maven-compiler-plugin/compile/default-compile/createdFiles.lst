@@ -1,0 +1,6 @@
+BookApp\resources\CheckResource.class
+BookApp\BookAppApplication.class
+BookApp\core\Book.class
+BookApp\BookAppConfiguration.class
+BookApp\db\BookDAO.class
+BookApp\resources\BookResource.class

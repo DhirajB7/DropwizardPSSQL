@@ -1,0 +1,12 @@
+package BookApp;
+
+import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
+
+import io.dropwizard.Configuration;
+
+public class BookAppConfiguration extends Configuration {
+	
+	
+
+}

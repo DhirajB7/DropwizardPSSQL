@@ -1,0 +1,9 @@
+package BookApp;
+
+import io.dropwizard.Configuration;
+
+public class BookAppConfiguration extends Configuration {
+	
+	
+
+}

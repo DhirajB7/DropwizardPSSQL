@@ -1,0 +1,30 @@
+package BookApp.resources;
+
+import java.util.List;
+
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+
+import org.jdbi.v3.core.Jdbi;
+
+import com.codahale.metrics.annotation.Timed;
+
+@Path("/book")
+@Produces()
+public class BookResource {
+	
+	private Jdbi jdbi ;
+	
+	public BookResource(Jdbi jdbi) {
+		this.jdbi = jdbi;
+	}
+
+
+	@Path("/all")
+	@GET
+	@Timed
+	public String getAllBook() {
+		return "WORKING";
+	}
+}

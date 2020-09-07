@@ -1,0 +1,43 @@
+package BookApp;
+
+import org.jdbi.v3.core.Jdbi;
+
+import BookApp.resources.BookResource;
+import BookApp.resources.CheckResource;
+import io.dropwizard.Application;
+import io.dropwizard.jdbi3.JdbiFactory;
+import io.dropwizard.setup.Bootstrap;
+import io.dropwizard.setup.Environment;
+
+public class BookAppApplication extends Application<BookAppConfiguration> {
+
+    public static void main(final String[] args) throws Exception {
+        new BookAppApplication().run(args);
+    }
+
+    @Override
+    public String getName() {
+        return "BookApp";
+    }
+
+    @Override
+    public void initialize(final Bootstrap<BookAppConfiguration> bootstrap) {
+        // TODO: application initialization
+    }
+
+    @Override
+    public void run(final BookAppConfiguration configuration,
+                    final Environment environment) {
+    	System.out.println("1111111111111111111111111111111");
+        final JdbiFactory factory = new JdbiFactory();
+        System.out.println("22222222222222222222222222222");
+        final Jdbi jdbi = factory.build(environment, configuration.getDataSourceFactory(), "postgresql");
+        System.out.println("33333333333333333333333333333");
+        environment.jersey().register(new BookResource(jdbi));
+        System.out.println("444444444444444444444444444444444");
+    	environment.jersey().register(new CheckResource());
+    	 System.out.println("55555555555555555555555555555555555");
+    	
+    }
+
+}
